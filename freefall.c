@@ -17,10 +17,22 @@ double exact_velocity(double t) {
 
 /* Aggiorna posizione e velocita' tramite i puntatori, usando per entrambi
  * i calcoli lo stato iniziale del passo. Dovrebbe restituire 1 se è implementata. */
+
+
+
 int euler_step(double dt, double *y, double *v) {
+  
+  if(y == NULL || v == NULL){
+    //se valori di y o v non validi
+    return 0;
+  }
     /* TODO: aggiungi la logica che implementa il metodo di Eulero visto a lezione, e 
      * restituisci 1 per segnalare che il passo e' implementato. */
-    return 0;
+
+    *y += v * dt;
+    *v += (-G) * dt;
+    return 1;
+   
 }
 
 int main(int argc, char *argv[]) {
