@@ -1,0 +1,17 @@
+freefall
+.freefall-strict
+*.o
+*.dat
+!convergenza.dat
+*.csv
+*.png
+!convergenza.png
+fit.log
+core
+core.*
+.vscode/
+compile_commands.json
+.DS_Store
+
+# Appunti locali del docente: non distribuire agli studenti.
+/ISTRUZIONI-DOCENTE-CLASSROOM50.local.md

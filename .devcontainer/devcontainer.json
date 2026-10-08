@@ -1,0 +1,15 @@
+{
+  "name": "Laboratorio di fisica computazionale — C17",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools"
+      ]
+    }
+  },
+  "postCreateCommand": "make freefall.o",
+  "remoteUser": "vscode"
+}
