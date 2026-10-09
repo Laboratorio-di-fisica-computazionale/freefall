@@ -25,14 +25,13 @@ int euler_step(double dt, double *y, double *v) {
   if(y == NULL || v == NULL){
     //se valori di y o v non validi
     return 0;
-  }
+  }else{
     /* TODO: aggiungi la logica che implementa il metodo di Eulero visto a lezione, e 
      * restituisci 1 per segnalare che il passo e' implementato. */
-
-    *y += v * dt;
+    *y += (*v) * dt;
     *v += (-G) * dt;
     return 1;
-   
+  }
 }
 
 int main(int argc, char *argv[]) {
