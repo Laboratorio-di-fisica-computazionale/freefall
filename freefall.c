@@ -26,8 +26,6 @@ int euler_step(double dt, double *y, double *v) {
     //se valori di y o v non validi
     return 0;
   }else{
-    /* TODO: aggiungi la logica che implementa il metodo di Eulero visto a lezione, e 
-     * restituisci 1 per segnalare che il passo e' implementato. */
     *y += (*v) * dt;
     *v += (-G) * dt;
     return 1;
@@ -40,9 +38,10 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    double dt = 0.0;
-    int steps = 0;
     // TODO: utilizzare le funzioni atof e atoi per convertire i parametri da stringa a double e int
+    double dt = atof(argv[1]);
+    int steps = atoi(argv[2]);
+    
     
     // TODO: controllate che i parametri dt e steps abbiano senso fisico
 
