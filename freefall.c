@@ -67,10 +67,10 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-        /* TODO: implementa il calcolo del tempo 
-        * double t = ...; // calcola il tempo corrente
-        */
-        double t;
+        //TODO: implementa il calcolo del tempo 
+        double t = (step + 1) * dt; // calcola il tempo corrente
+        
+       
         double y_exact = exact_position(t);
         double v_exact = exact_velocity(t);
         double error_y = fabs(y - y_exact);
