@@ -72,11 +72,11 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "Il passo numerico e' ancora da implementare!\n");
             return 1;
         }
-
+	
+	 double t = step * dt;
         /* TODO: implementa il calcolo del tempo 
         * double t = ...; // calcola il tempo corrente
         */
-        double t;
         double y_exact = exact_position(t);
         double v_exact = exact_velocity(t);
         double error_y = fabs(punto.y - y_exact);
