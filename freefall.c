@@ -17,11 +17,15 @@ double exact_velocity(double t) {
 
 /* Aggiorna posizione e velocita' tramite i puntatori, usando per entrambi
  * i calcoli lo stato iniziale del passo. Dovrebbe restituire 1 se è implementata. */
+
 int euler_step(double dt, double *y, double *v) {
-    /* TODO: aggiungi la logica che implementa il metodo di Eulero visto a lezione, e 
-     * restituisci 1 per segnalare che il passo e' implementato. */
-    return 0;
-}
+  
+  // TODO: aggiungi la logica che implementa il metodo di Eulero visto a lezione, e
+  //restituisci 1 per segnalare che il passo e' implementato. */
+   *y += (*v) * dt;
+    *v += (-G) * dt;
+    return 1;
+  }
 
 int main(int argc, char *argv[]) {
     if(argc != 3) {
@@ -31,10 +35,21 @@ int main(int argc, char *argv[]) {
 
     double dt = 0.0;
     int steps = 0;
+
     // TODO: utilizzare le funzioni atof e atoi per convertire i parametri da stringa a double e int
+
+    dt = atof(argv[1]);
+
+    steps = atoi(argv[2]);
+    
     
     // TODO: controllate che i parametri dt e steps abbiano senso fisico
 
+    if (dt <= 0.0 || steps <= 0) {
+    fprintf(stderr, "Errore: DT e N devono essere strettamente positivi.\n");
+    return 1;
+}
+    
     // Qui se il tempo lo permette potreste decidere di usare una struct
     /**
      * typedef struct {
