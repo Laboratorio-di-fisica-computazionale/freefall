@@ -44,7 +44,21 @@ int main(int argc, char *argv[]) {
     
     
     // TODO: controllate che i parametri dt e steps abbiano senso fisico
+    if(dt <= 0){
+      printf("il delta t deve essere > 0, riavviare il programma\n");
+	exit(EXIT_FAILURE);
+    }else if(steps <= 0){
+        printf("il numero N deve essere > 0, riavviare il programma\n");
+	exit(EXIT_FAILURE);
+    }else{
+      printf("i valori inseriti sono : dt = %lf e N = %d\n", dt, steps);
+    }
 
+
+
+
+
+    
     // Qui se il tempo lo permette potreste decidere di usare una struct
     /**
      * typedef struct {
