@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 	
-	 double t = step * dt;
+	double t = (step+1) * dt;
         /* TODO: implementa il calcolo del tempo 
         * double t = ...; // calcola il tempo corrente
         */
