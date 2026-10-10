@@ -54,24 +54,21 @@ int main(int argc, char *argv[]) {
       printf("i valori inseriti sono : dt = %lf e N = %d\n", dt, steps);
     }
 
-
-
-
-
-    
+   
     // Qui se il tempo lo permette potreste decidere di usare una struct
-    /**
-     * typedef struct {
-     *    double y;
-     *    double v;
-     * } Punto;
-     */
-    double y = Y0;
-    double v = V0;
+    
+    typedef struct {
+      double y;
+      double v;
+    } Punto;
 
+    Punto punto;
+    punto.y = Y0;
+    punto.v = V0;
+    
     printf("# t y_euler v_euler y_exact v_exact error_y\n");
     for(int step = 0; step < steps; step++) {
-        if(!euler_step(dt, &y, &v)) {
+        if(!euler_step(dt, &punto.y, &punto.v)) {
             fprintf(stderr, "Il passo numerico e' ancora da implementare!\n");
             return 1;
         }
@@ -82,9 +79,9 @@ int main(int argc, char *argv[]) {
         double t;
         double y_exact = exact_position(t);
         double v_exact = exact_velocity(t);
-        double error_y = fabs(y - y_exact);
+        double error_y = fabs(punto.y - y_exact);
 
-        printf("%.6f %.6f %.6f %.6f %.6f %.6f\n", t, y, v, y_exact, v_exact, error_y);
+        printf("%.6f %.6f %.6f %.6f %.6f %.6f\n", t, punto.y, punto.v, y_exact, v_exact, error_y);
     }
 
     return 0;
