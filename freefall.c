@@ -41,7 +41,9 @@ int main(int argc, char *argv[]) {
     // TODO: utilizzare le funzioni atof e atoi per convertire i parametri da stringa a double e int
     double dt = atof(argv[1]);
     int steps = atoi(argv[2]);
-    
+    FILE *output = fopen("freefall.dat", "w");
+
+
     
     // TODO: controllate che i parametri dt e steps abbiano senso fisico
     if(dt <= 0){
@@ -81,8 +83,10 @@ int main(int argc, char *argv[]) {
         double v_exact = exact_velocity(t);
         double error_y = fabs(punto.y - y_exact);
 
-        printf("%.6f %.6f %.6f %.6f %.6f %.6f\n", t, punto.y, punto.v, y_exact, v_exact, error_y);
+        fprintf(output,"%.6f %.6f %.6f\n", t, y_exact, punto.y);
     }
 
+    fclose(output);
+    
     return 0;
 }
